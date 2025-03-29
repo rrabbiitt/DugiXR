@@ -10,9 +10,9 @@
         Users can experience XR content based on traditional Korean games in a virtual space, 
         offering a new dimension of gaming through intuitive hand gesture recognition and interaction with real environments.
     </p>
-    <h2>Project Proposal</h2>
-    [DugiXR Project Plan](./DugiXR_PDF/DugiXR_Project_Plan.pdf)
-    <h2>Development Roadmap</h2>
-    <h2>Project Progress & Meeting Notes</h2>
+    <h2>Documents</h2>
+    <p><a href="./DugiXR_PDF/DugiXR_프로젝트기획안-압축됨.pdf">📄 DugiXR Project Plan</a></p>
+    <p><a href="./DugiXR_PDF/다은_개발로드맵.pdf">📄 Development Roadmap</a></p>
+    <p><a href="./DugiXR_PDF/DugiXR_진행과정.pdf">📄 Project Progress & Meeting Notes</a></p>
 </body>
 </html>
