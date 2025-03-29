@@ -8,3 +8,6 @@
 
 ## 🎮 InGame Video
 [![InGame Video](https://img.youtube.com/vi/uoZCPzFqd20/0.jpg)](https://youtu.be/uoZCPzFqd20)
+
+## 📥 Final Deliverable
+You can download the final deliverable from the following link: [Download Final Deliverable](https://bit.ly/DugiXR)
