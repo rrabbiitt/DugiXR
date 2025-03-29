@@ -11,6 +11,7 @@
         offering a new dimension of gaming through intuitive hand gesture recognition and interaction with real environments.
     </p>
     <h2>Project Proposal</h2>
+    [DugiXR Project Plan](./DugiXR_PDF/DugiXR_Project_Plan.pdf)
     <h2>Development Roadmap</h2>
     <h2>Project Progress & Meeting Notes</h2>
 </body>
