@@ -63,7 +63,22 @@ Pass-through refers to enabling users to view their surrounding real-world envir
     </div>
 </details>
 
-## 🔑 Key Features
+## 🎬 Scene Overview
+### 🏸 제기차기 Jegichagi
+**Overview**  
+*Jegichagi* is a traditional game with simple mechanics but hidden potential for diverse interpretations. We believed that XR technology could further expand its possibilities. Originally, *Jegichagi* is a traditional game where players kick a shuttlecock-like object with their feet to keep it from falling. However, to utilize *hand tracking*, we modified the gameplay to use hands instead of feet.
+
+**Physics Applied to the Jegi Object**  
+The force applied to the jegi is determined based on the direction of the user's hand when hitting it, allowing for control over its movement.  
+In the prototype, for simplicity and testing purposes, the score was fixed and the jegi object was restricted to move only along the Y-axis.
+
+### 🎇 낙화놀이 Nakhwa-nori
+**Overview**  
+*Nakhwa-nori* is a traditional fire play typically experienced only during special festivals or events. This project aims to make it accessible on a personal level through XR technology. In the XR version of *Nakhwa-nori*, users can write wishes on a piece of paper, send it off on a virtual lantern, and experience the beauty of falling embers in a simulated environment.
+
+**Movement Based on Hand Direction**  
+By using hand tracking, players can grab the *Nakhwa* lantern and move in the direction their hand is pointing, allowing them to navigate freely to their desired location within the virtual space.  
+You can refer to `HandLightManager.cs` for the implementation details of this feature.
 
 
 ## 📄 Documents
