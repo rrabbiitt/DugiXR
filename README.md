@@ -24,20 +24,47 @@
 
 ## 🎯 Required Skills
 <details>
-  <summary>Hand Tracking with Unity XR Interaction Toolkit (Main Skill)</summary>
-  Unity XR Interaction Toolkit for hand tracking is a technology used in VR and AR projects to track and interact with the user's hands in real-time using Unity. This technology integrates with Unity's XR platform, allowing users to perform various interactions such as selecting, dragging, and dropping objects within a virtual environment using their hands. It provides the following features:
-  - **Hand Tracking**: Accurately tracks the user's hands and reflects real-world hand movements within the virtual environment.
-  - **Interaction**: Enables users to touch, grab, and throw virtual objects using their hands for seamless interaction within the virtual environment.
-  - **Event System**: Executes game logic and processes interaction outcomes in response to user interactions.
-  - **Cross-Platform Support**: Provides compatibility with various VR and AR platforms, allowing use on multiple devices and headsets.
-  - **Customizable Features**: Offers extensibility, allowing developers to freely customize game logic and interaction styles.
+<summary><h3>Hand Tracking with Unity XR Interaction Toolkit (Main Skill)</h3></summary>
+Unity XR Interaction Toolkit for hand tracking is a technology used in VR and AR projects to track and interact with the user's hands in real-time using Unity. This technology integrates with Unity's XR platform, allowing users to perform various interactions such as selecting, dragging, and dropping objects within a virtual environment using their hands. It provides the following features:
+
+  - **Hand Tracking**: Accurately tracks the user's hands and reflects real-world hand movements within the virtual environment.  
+  - **Interaction**: Enables users to touch, grab, and throw virtual objects using their hands for seamless interaction within the virtual environment.  
+  - **Event System**: Executes game logic and processes interaction outcomes in response to user interactions.  
+  - **Cross-Platform Support**: Provides compatibility with various VR and AR platforms, allowing use on multiple devices and headsets.  
+  - **Customizable Features**: Offers extensibility, allowing developers to freely customize game logic and interaction styles.  
 </details>
 
-### LiDAR(Light Detection and Ranging)
-LiDAR is a technology that uses laser beams to measure the distance and shape of the surrounding environment. This technology plays a crucial role in augmented reality (AR) and virtual reality (VR) applications. It is primarily integrated into modern mobile devices and AR headsets, serving as a powerful tool for AR game developers. LiDAR can be integrated into AR games in the following ways:
-- Environmental Awareness: LiDAR can accurately measure the spatial structure of the surrounding environment. In AR games, it is used to recognize the player's real-world surroundings in real-time and reflect them in the game world.
-- Obstacle Detection and Interaction: LiDAR can precisely measure the distance to surrounding objects, making it useful for developing AR games where players interact with real-world objects. It allows players to avoid obstacles or collide virtual objects with real-world objects.
-- Background and Environment Enhancement: The data can be used to improve the visual quality of the surrounding environment. It can enhance the game's graphical effects or help integrate virtual characters more naturally with the real-world environment.
+<details>
+<summary><h3>LiDAR (Light Detection and Ranging)</h3></summary>
+
+LiDAR is a technology that uses laser beams to measure the distance and shape of the surrounding environment. This technology plays a crucial role in augmented reality (AR) and virtual reality (VR) applications. It is primarily integrated into modern mobile devices and AR headsets, serving as a powerful tool for AR game developers.
+
+**LiDAR can be integrated into AR games in the following ways:**
+
+- **Environmental Awareness**: LiDAR can accurately measure the spatial structure of the surrounding environment. In AR games, it is used to recognize the player's real-world surroundings in real-time and reflect them in the game world.  
+- **Obstacle Detection and Interaction**: LiDAR can precisely measure the distance to surrounding objects, making it useful for developing AR games where players interact with real-world objects. It allows players to avoid obstacles or collide virtual objects with real-world objects.  
+- **Background and Environment Enhancement**: The data can be used to improve the visual quality of the surrounding environment. It can enhance the game's graphical effects or help integrate virtual characters more naturally with the real-world environment.  
+</details>
+
+<details>
+<summary><h3>Pass-through</h3></summary>
+Pass-through refers to enabling users to view their surrounding real-world environment through a device. It is mainly utilized in AR and VR headsets by using cameras to capture and display the real world. This technology can be integrated into games in the following ways:
+
+  - **Real-World Integration**: Allows users to continuously see the real world. Virtual characters or objects can appear while the user views their surroundings.
+  - **Enhanced Reality Experience**: Provides experiences such as allowing users to move to different locations within a physical space.  
+  - **Interaction**: Enables users to interact with physical objects in their environment. Elements involving physical objects can be added to the gameplay.
+  - **User Safety and Convenience**: Can include warning features to prevent users from colliding with real-world objects, or visually provide helpful information for user convenience.
+
+**Test Video**:
+<div>
+      <a href="https://youtu.be/DoZBhQhffvk" target="_blank">
+        <img src="https://img.youtube.com/vi/DoZBhQhffvk/0.jpg" alt="Demo Video Thumbnail" />
+      </a>
+    </div>
+</details>
+
+## 🔑 Key Features
+
 
 ## 📄 Documents
 - [DugiXR Project Plan](./DugiXR_PDF/DugiXR_프로젝트기획안-압축됨.pdf)
