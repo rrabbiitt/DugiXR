@@ -70,15 +70,36 @@ Pass-through refers to enabling users to view their surrounding real-world envir
 
 **Physics Applied to the Jegi Object**  
 The force applied to the jegi is determined based on the direction of the user's hand when hitting it, allowing for control over its movement.  
-In the prototype, for simplicity and testing purposes, the score was fixed and the jegi object was restricted to move only along the Y-axis.
+In the prototype, for simplicity and testing purposes, the score was fixed and the jegi object was restricted to move only along the Y-axis.  
+You can refer to `SetCenterOfMass.cs` for the implementation details of this feature.
 
-### 🎇 낙화놀이 Nakhwa-nori
+### 🏮 낙화놀이 Nakhwa-nori
 **Overview**  
 *Nakhwa-nori* is a traditional fire play typically experienced only during special festivals or events. This project aims to make it accessible on a personal level through XR technology. In the XR version of *Nakhwa-nori*, users can write wishes on a piece of paper, send it off on a virtual lantern, and experience the beauty of falling embers in a simulated environment.
 
 **Movement Based on Hand Direction**  
 By using hand tracking, players can grab the *Nakhwa* lantern and move in the direction their hand is pointing, allowing them to navigate freely to their desired location within the virtual space.  
 You can refer to `HandLightManager.cs` for the implementation details of this feature.
+
+### 🏹 투호놀이 Tuho
+**Overview**  
+*Tuho* is a traditional Korean game with strong potential to be transformed into a more dynamic and interactive experience when combined with modern technology.  
+In this XR-based version, players engage in a *Tuho* battle against virtual monsters, allowing them to interact with digital elements in their physical space and enjoy a new type of immersive gameplay.
+
+**Grabbing Mechanics**  
+Hand tracking support allows the system to recognize precise finger movements, enabling users to perform natural grabbing gestures.  
+To implement this, components provided by Oculus Integration were used to detect the grabbing motion, and the `PhysicsGrabbable` component was added to handle realistic grabbing and throwing interactions with the *Tuho* stick.
+
+### 🔥 쥐불놀이 & 달집 태우기 Jwilbulnori & Daljip Burning
+**Overview**  
+*Jwibulnori* and *Daljip Burning* are traditional Korean fire-related rituals. However, due to safety concerns, they are not easily performed in real life today. This project was designed to recreate both experiences in a modern and safe way using XR technology.  
+The game combines the fire-spinning mechanic of *Jwibulnori* with the symbolic burning of the *Daljip* (moon house), offering users an immersive and culturally rich virtual experience.
+
+**Spinning Fire Can**  
+By grabbing the fireball with hand tracking, the rotation speed is determined by the intensity of the user's hand movement.  
+Faster hand motions cause the fireball to spin more rapidly, while slower movements gradually reduce the spinning speed.  
+You can refer to `HandLightManager.cs` for the implementation details of this feature.
+
 
 
 ## 📄 Documents
