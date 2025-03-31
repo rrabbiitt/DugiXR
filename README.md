@@ -64,6 +64,10 @@ Pass-through refers to enabling users to view their surrounding real-world envir
 </details>
 
 ## 🎬 Scene Overview
+### 🏘️ Main Village
+The Main Village is the starting point of the game, where players are introduced to each game’s concept and the story unfolds.  
+Take a look at the *in-game footage* below!
+
 ### 🏸 제기차기 Jegichagi
 **Overview**  
 *Jegichagi* is a traditional game with simple mechanics but hidden potential for diverse interpretations. We believed that XR technology could further expand its possibilities. Originally, *Jegichagi* is a traditional game where players kick a shuttlecock-like object with their feet to keep it from falling. However, to utilize *hand tracking*, we modified the gameplay to use hands instead of feet.
@@ -98,16 +102,15 @@ The game combines the fire-spinning mechanic of *Jwibulnori* with the symbolic b
 **Spinning Fire Can**  
 By grabbing the fireball with hand tracking, the rotation speed is determined by the intensity of the user's hand movement.  
 Faster hand motions cause the fireball to spin more rapidly, while slower movements gradually reduce the spinning speed.  
-You can refer to `HandLightManager.cs` for the implementation details of this feature.
+You can refer to `CanRotation.cs` for the implementation details of this feature.
 
-
+## 💣 Troubleshooting
 
 ## 📄 Documents
 - [DugiXR Project Plan](./DugiXR_PDF/DugiXR_프로젝트기획안-압축됨.pdf)
-- [Development Roadmap](./DugiXR_PDF/다은_개발로드맵.pdf)
 - [Project Progress & Meeting Notes](./DugiXR_PDF/DugiXR_진행과정.pdf)
 
-## 🎮 InGame Video
+## 🎮 In-Game Footage
 [![InGame Video](https://img.youtube.com/vi/uoZCPzFqd20/0.jpg)](https://youtu.be/uoZCPzFqd20)
 
 ## 📥 Final Deliverable
