@@ -105,6 +105,7 @@ Faster hand motions cause the fireball to spin more rapidly, while slower moveme
 You can refer to `CanRotation.cs` for the implementation details of this feature.
 
 ## 💣 Troubleshooting
+---
 ### 1️⃣ **Hand Tracking for Object Interaction**
 
 When implementing **object interaction** using **hand tracking** in VR, the primary issue was the **lack of references** and resources for accurately handling hand gestures for grabbing and throwing objects. Unlike traditional VR controller-based grabbing, hand tracking involves more complex interactions, requiring precise adjustments to the various **Oculus Integration components**.
@@ -134,19 +135,65 @@ When implementing **object interaction** using **hand tracking** in VR, the prim
    - **Physics Grabbable**: To allow for **physical interactions** with the object, **Physics Grabbable** was essential. When using physics, we applied realistic **forces** and **velocities** based on the hand's movements to ensure that objects behave naturally when grabbed or thrown. We adjusted the **mass**, **drag**, and **angular drag** properties to make the objects behave more realistically in the VR environment.
      ![이미지 설명](./DugiXR_IMG/troubleshooting01.jpg)
 
-4. **Drag Force for Natural Resistance**:  
-   To simulate the **resistance of water** and slow down the swimmer when no active input is detected, a **drag force** was introduced. This drag force **gradually decelerates the swimmer**, helping to smooth out the swimming motion and make it feel more natural.
-    ```csharp
-    if (_rigidbody.velocity.sqrMagnitude > 0.01f) {
-      _rigidbody.AddForce(-_rigidbody.velocity * dragForce, ForceMode.Acceleration);
-    }
-    ```
-   This drag force acts in the opposite direction to the swimmer's velocity, providing friction-like behavior that reduces speed over time.
-
+3. **Detailed Configuration Process**:  
+   - **Synchronizing Hand Position and Rotation**:  
+    Hand tracking required constant synchronization of **hand position** and **rotation** with the object’s movement. We used **XR Controller** to sync these values and adjusted the **tracking offsets** to ensure objects aligned with hand gestures.
+   - **Adjusting Physical Interactions**:  
+    The **speed**, **direction**, and **force** of the hand were crucial for determining how the object would react. By using **Unity’s physics engine** and adjusting the object’s response to hand movements, we ensured that the object **moved in a realistic and responsive manner**, accurately reflecting the hand’s motion.
+   - **Debugging and Tuning**:
+    We continually refined the interaction system through **testing and iterative adjustments**. By monitoring how the object behaved during interaction, we fine-tuned its response to ensure consistent, **realistic behavior** during both grabbing and throwing.
 ---
 ### **Conclusion**
 ---
-By combining **InputActionReference** for more accurate input tracking and optimizing the force application with Unity's physics engine, the issue of **input sensitivity** and **inconsistent movement** was resolved. The final implementation now provides a **smooth and responsive swimming experience** in VR, with **natural resistance** modeled by drag force. This solution creates a more immersive and comfortable swimming mechanic for users.
+By implementing the above optimizations and configuring the **Grabbable**, **Hand Grab Interactable**, and **Physics Grabbable** components correctly, we were able to resolve the issues with **hand tracking and physical interaction**. The final solution allowed for a more **accurate and natural** grabbing and throwing experience, leveraging **Oculus Integration** and the **XR Interaction Toolkit**.  
+This approach greatly improved **hand-tracked object interactions** by ensuring more **stable and predictable behavior** in the VR environment.
+
+---
+---
+### 2️⃣ **VR Optimizatino Issues in Unity**
+
+During the development of the VR project, several performance-related issues emerged that hindered the overall gameplay experience, particularly when testing on different VR headsets. The key issues were:
+- **Low Frame Rates**: Frame rate drops occurred when rendering complex VR scenes, especially in environments with numerous interactable objects or physics-based interactions. These drops were particularly noticeable in high-performance scenarios like **real-time physics calculations** and complex animations.
+- **Render Performance**: Significant issues arose with **GPU load** and **overdraw**, causing **lag** and **stuttering** in the VR environment. With the heavy visual requirements of VR, every frame needs to be rendered smoothly to avoid motion sickness or discomfort.
+- **Physics Overhead**: The **physics engine** consumed a significant amount of processing power, especially when interacting with **multiple moving objects** in the scene. This led to inconsistent and sluggish behavior when objects were grabbed, thrown, or interacted with dynamically.
+
+---
+### **Solution Approach**
+---
+
+1. **Optimizing Frame Rates and Rendering Performance**:  
+   - **Reducing Overdraw**:  
+   To minimize the load on the GPU, we tackled **overdraw** by simplifying shaders and using **occlusion culling** to avoid rendering objects that were off-screen or hidden behind other objects. This helped reduce the number of pixels being rendered and made the game run more smoothly.  
+  Image: Unity Profiler showing the reduction of overdraw in VR scene for improved GPU performance.
+   - **Reducing Draw Calls**:
+   A major performance bottleneck was **too many draw calls** per frame. To optimize this, we implemented **GPU instancing** to render multiple instances of the same object using a single draw call. Additionally, we utilized **texture atlases** to combine multiple textures into one, which significantly reduced material switches and draw calls.  
+  Image: Before and after optimization showing reduced draw calls and improved performance.    
+
+2. **Physics Optimization**:  
+   - **Simplifying Colliders**:  
+   Using **mesh colliders** was one of the major performance issues. These were replaced with simpler **box colliders**, **capsule colliders**, or **sphere colliders**, which reduced the computational cost of collision detection.  
+   - **Optimizing Rigidbody Interactions**:  
+   For moving objects, such as those used for **grabbing and throwing**, we optimized the way **forces** were applied. By using **discrete collision detection** instead of **continuous**, we reduced the computational cost of simulating fast-moving objects, which helped improve performance.
+
+3. **Optimizing VR Input Handling**:  
+   - **Reducing Input Polling**:  
+   Constantly polling VR input devices can have a significant performance cost, especially on lower-end devices. To optimize this, we reduced the frequency of input polling and only updated the input states when **necessary**, such as when an interaction like grabbing or pressing occurred.
+   - **Hand Tracking Optimization**:  
+   **Hand tracking** is a powerful feature, but it can be resource-intensive. To optimize, we updated hand tracking at a **lower frequency** compared to controller input, ensuring that **hand gestures** were still recognized but without putting too much strain on the system.
+
+4. **Shader and Material Optimization**:  
+   - **Optimizing Shader Complexity**:  
+   Complex shaders can severely impact performance, especially in VR. To reduce GPU load, we replaced complex shaders with simpler, **more efficient shaders** for background and less important objects. We also **baked lighting** for static objects to reduce real-time rendering overhead.
+   - **Material Batching**:  
+   To minimize **material switches** and **draw calls**, we implemented **material batching** by combining multiple textures into a single atlas. This allowed us to render objects with fewer material changes, improving performance.
+  Image: Optimized materials and shaders for VR performance, showing improved GPU usage and lower draw calls.
+     
+---
+### **Conclusion**
+---
+By implementing **multiple optimization techniques**, such as reducing **draw calls**, simplifying **physics interactions**, and improving **rendering performance**, the VR project achieved a **stable frame rate** and smoother gameplay. These optimizations ensured that the game ran well across various VR platforms and devices, **minimizing lag** and providing a more immersive experience.  
+Furthermore, optimizing the **VR input handling** and **hand tracking** processes helped reduce **input lag** while maintaining accurate interactions in the game. These changes resulted in a **significantly improved user experience**, with **higher frame rates**, **faster build times**, and a **more responsive gameplay experience** across all targeted VR hardware.
+
 ## 📄 Documents
 - [DugiXR Project Plan](./DugiXR_PDF/DugiXR_프로젝트기획안-압축됨.pdf)
 - [Project Progress & Meeting Notes](./DugiXR_PDF/DugiXR_진행과정.pdf)
