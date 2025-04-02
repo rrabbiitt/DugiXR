@@ -150,7 +150,7 @@ This approach greatly improved **hand-tracked object interactions** by ensuring 
 
 ---
 ---
-### 2️⃣ **VR Optimizatino Issues in Unity**
+### 2️⃣ **VR Optimization Issues in Unity**
 
 During the development of the VR project, several performance-related issues emerged that hindered the overall gameplay experience, particularly when testing on different VR headsets. The key issues were:
 - **Low Frame Rates**: Frame rate drops occurred when rendering complex VR scenes, especially in environments with numerous interactable objects or physics-based interactions. These drops were particularly noticeable in high-performance scenarios like **real-time physics calculations** and complex animations.
