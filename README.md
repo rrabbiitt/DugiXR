@@ -105,7 +105,48 @@ Faster hand motions cause the fireball to spin more rapidly, while slower moveme
 You can refer to `CanRotation.cs` for the implementation details of this feature.
 
 ## 💣 Troubleshooting
+### 1️⃣ **Hand Tracking for Object Interaction**
 
+When implementing **object interaction** using **hand tracking** in VR, the primary issue was the **lack of references** and resources for accurately handling hand gestures for grabbing and throwing objects. Unlike traditional VR controller-based grabbing, hand tracking involves more complex interactions, requiring precise adjustments to the various **Oculus Integration components**.
+
+#### **Issues Encountered**
+---
+- **Instability of Hand Tracking**:  
+  Hand tracking was often inaccurate, especially with **subtle or fast hand movements**, resulting in **incorrect object interactions** like failing to grab or throwing objects in unintended directions.
+- **Challenges with Physical Interactions**:  
+  When trying to grab and throw an object, it was important that the **object responded physically** based on hand movement. The challenge was to **simulate realistic forces and trajectories**, especially when tracking the force and direction of the hand to produce a natural throw.
+- **Difficulty in Configuring Components**:  
+  Using multiple components such as **Grabbable, Hand Grab Interactable**, and **Physics Grabbable** required precise tuning. Ensuring these components worked well together, while maintaining accurate interaction and physical responses, was a complex task.
+  ![이미지 설명](./DugiXR_IMG/troubleshooting01.jpg)
+
+---
+### **Solution Approach**
+---
+
+1. **Improving Hand Tracking Accuracy**:  
+   To enhance hand tracking accuracy, several optimization techniques were implemented:
+   - **Movement filtering** algorithms were applied to **stabilize the hand’s tracking**, particularly during rapid or subtle movements.
+   - **Hand position prediction** was introduced to **improve accuracy** when the hand moved too fast, allowing more reliable tracking even in fast gestures.
+
+2. **Configuring Grabbable, Hand Grab Interactable, and Physics Grabbable Components**:  
+   Each of these components had to be fine-tuned for precise interactions:
+   - Grabbable: This component is used to make objects **grabbable**. In hand tracking scenarios, this is essential to ensure that objects are **properly detected** and handled by the hand. We used **XR Grab Interactable** to manage the grabbing process, and **adjusted its settings** to ensure that objects respond correctly to hand gestures.
+   - **Hand Grab Interactable**: This component allows the hand to directly interact with the object. By adjusting the **hand tracking** to match the **hand’s shape and position**, we ensured that the interaction felt **natural**. This required syncing the hand's **position** and **rotation** with the object's transformation.
+   - **Physics Grabbable**: To allow for **physical interactions** with the object, **Physics Grabbable** was essential. When using physics, we applied realistic **forces** and **velocities** based on the hand's movements to ensure that objects behave naturally when grabbed or thrown. We adjusted the **mass**, **drag**, and **angular drag** properties to make the objects behave more realistically in the VR environment.
+
+4. **Drag Force for Natural Resistance**:  
+   To simulate the **resistance of water** and slow down the swimmer when no active input is detected, a **drag force** was introduced. This drag force **gradually decelerates the swimmer**, helping to smooth out the swimming motion and make it feel more natural.
+    ```csharp
+    if (_rigidbody.velocity.sqrMagnitude > 0.01f) {
+      _rigidbody.AddForce(-_rigidbody.velocity * dragForce, ForceMode.Acceleration);
+    }
+    ```
+   This drag force acts in the opposite direction to the swimmer's velocity, providing friction-like behavior that reduces speed over time.
+
+---
+### **Conclusion**
+---
+By combining **InputActionReference** for more accurate input tracking and optimizing the force application with Unity's physics engine, the issue of **input sensitivity** and **inconsistent movement** was resolved. The final implementation now provides a **smooth and responsive swimming experience** in VR, with **natural resistance** modeled by drag force. This solution creates a more immersive and comfortable swimming mechanic for users.
 ## 📄 Documents
 - [DugiXR Project Plan](./DugiXR_PDF/DugiXR_프로젝트기획안-압축됨.pdf)
 - [Project Progress & Meeting Notes](./DugiXR_PDF/DugiXR_진행과정.pdf)
