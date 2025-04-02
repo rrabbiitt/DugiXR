@@ -7,7 +7,7 @@
 ### Project Objective
 `DugiXR` is a project that aims to create a new form of entertainment experience by blending modern technology with Korean tradition. Utilizing spatial computing, passthrough, and hand-tracking technology of the Meta Quest 3, it reinterprets traditional Korean games in a modern way, allowing users to experience them in virtual reality. Through this, the project seeks to introduce the charm of Korean culture to users worldwide.
 ### My Role
-As the **Project Manager** and a **sub-developer**in the `DugiXR` project, I was responsible for overseeing the **overall story and game design** as well as leading the team. I worked on designing and developing various **VR game scenes**, including scene setup and environment design. Additionally, I implemented key **VR interactions**, utilizing **hand tracking technology** for core gameplay features, and designed the **VR UI/UX**. I also played a key role in **player interaction programming** and contributed to **story planning**.
+As the **project manager** and a **sub-developer**in the `DugiXR` project, I was responsible for overseeing the **overall story and game design** as well as leading the team. I worked on designing and developing various **VR game scenes**, including scene setup and environment design. Additionally, I implemented key **VR interactions**, utilizing **hand tracking technology** for core gameplay features, and designed the **VR UI/UX**. I also played a key role in **player interaction programming** and contributed to **story planning**.
 
 ## 🛠️ Stacks
 ### 🌍 Environment
