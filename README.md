@@ -117,7 +117,6 @@ When implementing **object interaction** using **hand tracking** in VR, the prim
   When trying to grab and throw an object, it was important that the **object responded physically** based on hand movement. The challenge was to **simulate realistic forces and trajectories**, especially when tracking the force and direction of the hand to produce a natural throw.
 - **Difficulty in Configuring Components**:  
   Using multiple components such as **Grabbable, Hand Grab Interactable**, and **Physics Grabbable** required precise tuning. Ensuring these components worked well together, while maintaining accurate interaction and physical responses, was a complex task.
-  ![이미지 설명](./DugiXR_IMG/troubleshooting01.jpg)
 
 ---
 ### **Solution Approach**
@@ -133,6 +132,7 @@ When implementing **object interaction** using **hand tracking** in VR, the prim
    - Grabbable: This component is used to make objects **grabbable**. In hand tracking scenarios, this is essential to ensure that objects are **properly detected** and handled by the hand. We used **XR Grab Interactable** to manage the grabbing process, and **adjusted its settings** to ensure that objects respond correctly to hand gestures.
    - **Hand Grab Interactable**: This component allows the hand to directly interact with the object. By adjusting the **hand tracking** to match the **hand’s shape and position**, we ensured that the interaction felt **natural**. This required syncing the hand's **position** and **rotation** with the object's transformation.
    - **Physics Grabbable**: To allow for **physical interactions** with the object, **Physics Grabbable** was essential. When using physics, we applied realistic **forces** and **velocities** based on the hand's movements to ensure that objects behave naturally when grabbed or thrown. We adjusted the **mass**, **drag**, and **angular drag** properties to make the objects behave more realistically in the VR environment.
+     ![이미지 설명](./DugiXR_IMG/troubleshooting01.jpg)
 
 4. **Drag Force for Natural Resistance**:  
    To simulate the **resistance of water** and slow down the swimmer when no active input is detected, a **drag force** was introduced. This drag force **gradually decelerates the swimmer**, helping to smooth out the swimming motion and make it feel more natural.
