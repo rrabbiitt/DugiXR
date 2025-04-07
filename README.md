@@ -194,7 +194,11 @@ During the development of the VR project, several performance-related issues eme
 ### **Conclusion**
 ---
 By implementing **multiple optimization techniques**, such as reducing **draw calls**, simplifying **physics interactions**, and improving **rendering performance**, the VR project achieved a **stable frame rate** and smoother gameplay. These optimizations ensured that the game ran well across various VR platforms and devices, **minimizing lag** and providing a more immersive experience.  
-Furthermore, optimizing the **VR input handling** and **hand tracking** processes helped reduce **input lag** while maintaining accurate interactions in the game. These changes resulted in a **significantly improved user experience**, with **higher frame rates**, **faster build times**, and a **more responsive gameplay experience** across all targeted VR hardware.
+Furthermore, optimizing the **VR input handling** and **hand tracking** processes helped reduce **input lag** while maintaining accurate interactions in the game. These changes resulted in a **significantly improved user experience**, with **higher frame rates**, **faster build times**, and a **more responsive gameplay experience** across all targeted VR hardware.  
+Before :  
+![이미지 설명](./DugiXR_IMG/before.png)  
+After :  
+![이미지 설명](./DugiXR_IMG/after.png)
 
 ## 📄 Documents
 - [DugiXR Project Plan](./DugiXR_PDF/DugiXR_프로젝트기획안-압축됨.pdf)
